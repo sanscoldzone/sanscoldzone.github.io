@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry's Code - Evidence Board</title>
+    <link rel="icon" type="image/png" href="../immagini/icon.png">
+    <link rel="stylesheet" href="../css/lavagna.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9515995415757323"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="intestazione">
+        <h1 class="titolo-pagina">HARRY'S CODE - EVIDENCE BOARD</h1>
+        <a href="../pagine/home.html" class="btn-home" id="btn-home">
+            &#8962; Torna alla Home
+        </a>
+    </div>
+    <!-- CONTENITORE PRINCIPALE (LA SCENA) -->
+    <div class="scena-investigativa">
+        
+        <!-- Frecce di navigazione -->
+        <button class="freccia-nav freccia-prev" onclick="spostaRegola(-1)">&#10094;</button>
+        <button class="freccia-nav freccia-next" onclick="spostaRegola(1)">&#10095;</button>
+
+        <!-- Tasto per tornare alla vista panoramica -->
+        <button class="btn-reset" id="btn-back" onclick="resetVista()">&#10006; Torna alla Lavagna</button>
+
+        <!-- LA LAVAGNA DI SUGHERO -->
+        <div class="lavagna-sughero" id="lavagna">
+            
+            <!-- REGOLE (Con immagini Unsplash pronte per la prova) -->
+            <div class="polaroid" id="card-1" onclick="zoomRegola(1)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#01</span>
+                <img src="../immagini/1reg.gif" alt="Regola 1">
+                <div class="dettagli-regola">
+                    <h2>#1: Non farsi scoprire</h2>
+                    <p>La regola cardine che garantisce la sopravvivenza. Ogni azione deve essere invisibile. Usa la plastica e cancella ogni traccia.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-2" onclick="zoomRegola(2)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#02</span>
+                <img src="../immagini/2-regola.jpg" alt="Regola 2">
+                <div class="dettagli-regola">
+                    <h2>#2: Mai uccidere un innocente</h2>
+                    <p>Il pilastro morale del codice. Raccogli prove schiaccianti e inconfutabili prima di agire.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-3" onclick="zoomRegola(3)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#03</span>
+                <img src="../immagini/3-regola.jpeg" alt="Regola 3">
+                <div class="dettagli-regola">
+                    <h2>#3: Solo assassini sfuggiti alla giustizia</h2>
+                    <p>Si applica a coloro che il sistema legale non è riuscito a punire. Intervieni dove la legge fallisce.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-4" onclick="zoomRegola(4)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#04</span>
+                <img src="../immagini/4reg.png" alt="Regola 4">
+                <div class="dettagli-regola">
+                    <h2>#4: Mimetizzarsi</h2>
+                    <p>Integrati perfettamente nella società. Mantieni un lavoro stabile e proietta l'immagine di un cittadino comune.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-5" onclick="zoomRegola(5)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#05</span>
+                <img src="../immagini/5reg.gif" alt="Regola 5">
+                <div class="dettagli-regola">
+                    <h2>#5: Fingere le emozioni</h2>
+                    <p>Simula i sentimenti umani standard: sorridi e mostra empatia per evitare di sembrare sospetto.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-6" onclick="zoomRegola(6)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#06</span>
+                <img src="../immagini/6reg.png" alt="Regola 6">
+                <div class="dettagli-regola">
+                    <h2>#6: Essere metodici</h2>
+                    <p>Pianificazione scientifica: studio delle abitudini della vittima, preparazione della stanza e piano di fuga.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-7" onclick="zoomRegola(7)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#07</span>
+                <img src="../immagini/7reg.png" alt="Regola 7">
+                <div class="dettagli-regola">
+                    <h2>#7: Niente di personale</h2>
+                    <p>Rabbia e vendetta offuscano il giudizio. Opera con il distacco emotivo e la precisione di uno strumento chirurgico.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-8" onclick="zoomRegola(8)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#08</span>
+                <img src="../immagini/8reg.jpg" alt="Regola 8">
+                <div class="dettagli-regola">
+                    <h2>#8: Non dare nell'occhio</h2>
+                    <p>Mantieni il sangue freddo in pubblico. Evita comportamenti eccentrici che potrebbero attirare l'attenzione.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-9" onclick="zoomRegola(9)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#09</span>
+                <img src="../immagini/9reg.gif" alt="Regola 9">
+                <div class="dettagli-regola">
+                    <h2>#9: Omicidio con scopo</h2>
+                    <p>Uccidere senza motivo è inaccettabile. Ogni azione deve impedire ad altri predatori di colpire di nuovo.</p>
+                </div>
+            </div>
+
+            <div class="polaroid" id="card-10" onclick="zoomRegola(10)">
+                <div class="spilla"></div>
+                <span class="num-polaroid">#10</span>
+                <img src="../immagini/10reg.gif" alt="Regola 10">
+                <div class="dettagli-regola">
+                    <h2>#10: Smaltire il corpo</h2>
+                    <p>Seziona e sigilla i resti in sacchi zavorrati, poi gettali nella Corrente del Golfo dal motoscafo.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPT PER LO ZOOM E SPOSTAMENTO -->
+    <script>
+        let regolaAttiva = null;
+        const totaleRegole = 10;
+
+        function zoomRegola(id) {
+            regolaAttiva = id;
+            const lavagna = document.getElementById('lavagna');
+            const card = document.getElementById(`card-${id}`);
+
+            // Rimuove lo stato attivo da tutte le altre card
+            document.querySelectorAll('.polaroid').forEach(c => c.classList.remove('attiva'));
+            card.classList.add('attiva');
+
+            // Calcolo preciso del centro
+            const scena = document.querySelector('.scena-investigativa');
+            const scenaRect = scena.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+
+            // Calcoliamo lo spostamento per portare la Polaroid esatta al centro dello schermo
+            const centroScenaX = scenaRect.width / 2;
+            const centroScenaY = scenaRect.height / 2;
+            const centroCardX = cardRect.left + (cardRect.width / 2);
+            const centroCardY = cardRect.top + (cardRect.height / 2);
+
+            // Otteniamo la posizione corrente della lavagna
+            const style = window.getComputedStyle(lavagna);
+            const matrix = new WebKitCSSMatrix(style.transform);
+            
+            // Calcolo delta dallo stato attuale
+            const offsetX = centroScenaX - centroCardX + matrix.m41;
+            const offsetY = centroScenaY - centroCardY + matrix.m42;
+
+            // Zoom bilanciato a 1.55 (non sparirà più dallo schermo!)
+            lavagna.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(1.55)`;
+            document.body.classList.add('in-zoom');
+        }
+
+        function resetVista() {
+            regolaAttiva = null;
+            const lavagna = document.getElementById('lavagna');
+            
+            // Ripristina la lavagna al centro senza zoom
+            lavagna.style.transform = 'translate(0px, 0px) scale(1)';
+            document.querySelectorAll('.polaroid').forEach(c => c.classList.remove('attiva'));
+            document.body.classList.remove('in-zoom');
+        }
+
+        function spostaRegola(direzione) {
+            if (regolaAttiva === null) return;
+            
+            let nuovoId = regolaAttiva + direzione;
+            if (nuovoId < 1) nuovoId = totaleRegole;
+            if (nuovoId > totaleRegole) nuovoId = 1;
+
+            zoomRegola(nuovoId);
+        }
+    </script>
+</body>
+</html>

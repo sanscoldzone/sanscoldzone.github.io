@@ -1,0 +1,224 @@
+body {
+    background-color: #080808;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.titolo-pagina {
+    text-align: center;
+    color: #8b0000;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+.titolo-pagina {
+    color: #8b0000;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+.intestazione {
+    text-align: center;
+    margin-top: 15px;
+    position: relative;
+    z-index: 10;
+}
+/* TASTO HOME */
+.btn-home {
+    display: inline-block;
+    color: #ccc;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid #8b0000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-home:hover {
+    background: #8b0000;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);
+}
+
+/* QUANDO LA TELECAMERA VA IN ZOOM: NASCONDE IL TASTO HOME */
+body.in-zoom .btn-home {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* La scena che simula l'inquadratura della telecamera */
+.scena-investigativa {
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LA LAVAGNA: Ha l'animazione di transizione per lo zoom */
+.lavagna-sughero {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    padding: 65px 45px 45px 45px;
+    background-image: url(../immagini/lavagna.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1050px; /* Dimensioni fisse per far combaciare la griglia con i fili */
+    height: 650px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transizione fluida stile videogioco */
+    transform-origin: center center;
+}
+
+/* Le singole Polaroid */
+.polaroid {
+    background: #fdfbf7;
+    color: #111;
+    padding: 8px 8px 10px 8px;
+    border-radius: 2px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    width: 140px;
+    height: 185px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Effetto di ogni Polaroid inclinata in modo leggermente casuale */
+.polaroid:nth-child(even) { transform: rotate(2deg); }
+.polaroid:nth-child(odd) { transform: rotate(-3deg); }
+.polaroid:nth-child(3n) { transform: rotate(1deg); }
+
+.polaroid:hover {
+    transform: scale(1.08) rotate(0deg) !important;
+    box-shadow: 0 10px 25px rgba(230, 0, 0, 0.4);
+    z-index: 5;
+}
+
+/* Spilla da balia rossa sopra la polaroid */
+.spilla {
+    width: 12px;
+    height: 12px;
+    background: #e60000;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.num-polaroid {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-weight: bold;
+    color: #8b0000;
+    font-size: 12px;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    filter: sepia(0.3) contrast(1.1);
+    margin-top: 10px;
+}
+
+/* I dettagli nascosti nella vista panoramica, mostrati solo durante lo zoom */
+.dettagli-regola {
+    display: none;
+    margin-top: 10px;
+}
+
+.dettagli-regola h2 {
+    font-size: 11px;
+    color: #8b0000;
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.dettagli-regola p {
+    font-size: 8px;
+    line-height: 1.3;
+    margin: 0;
+    text-align: left;
+}
+
+/* QUANDO UNA POLAROID È IN ZOOM */
+.polaroid.attiva {
+    border: 2px solid #8b0000;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+.polaroid.attiva img{
+    height:65px;
+}
+
+.polaroid.attiva .dettagli-regola {
+    display: block; /* Rivela il testo dettagliato */
+}
+
+/* BOTTONI DI INTERFACCIA A SCHERMO INTERO */
+.btn-reset {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    display: none;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.freccia-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 10, 10, 0.8);
+    color: #e60000;
+    border: 2px solid #e60000;
+    font-size: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: none;
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.freccia-prev { left: 30px; }
+.freccia-next { right: 30px; }
+
+.freccia-nav:hover, .btn-reset:hover {
+    background: #e60000;
+    color: white;
+    box-shadow: 0 0 20px #e60000;
+}
+
+/* Rende visibili i bottoni quando la telecamera è in modalità Zoom */
+body.in-zoom .btn-reset,
+body.in-zoom .freccia-nav {
+    display: block;
+}

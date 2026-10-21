@@ -1,0 +1,585 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.testo-rosso{
+    color: #e60000;
+    text-shadow: 0 0 10px rgba(230, 0, 0, 0.6);
+}
+body {
+    background-image: url(../immagini/sfondo.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #000;
+    font-family: 'Bebas Neue','Soda Script', 'Arial';
+    color: #fff;
+    padding: 40px 20px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#titolo {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #e60000; 
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#sottotitolo {
+    color: #e60000; 
+    font-size: 1.5rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(230, 0, 0, 0.7);
+}
+
+#griglia-immagini {
+    display: grid !important; /* L'importante forza il browser a usare il Grid Layout */
+    grid-template-columns: 1fr 1fr;
+    gap: 25px; 
+    max-width: 1000px; 
+    margin: 0 auto 50px auto;
+    width: 100%;
+}
+#griglia-immagini a {
+    display: block;
+    width: 100%;
+}
+
+#griglia-immagini a img {
+    width: 100%;
+    height: auto;
+    display:block;
+    border: 2px solid rgba(230, 0, 0, 0.5); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+#griglia-immagini a img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
+    border-color: #e60000;
+}
+
+
+footer {
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 2px solid #e60000; 
+    border-bottom: 2px solid #e60000; 
+    padding: 15px 0;
+    box-shadow: 0 0 10px rgba(230, 0, 0, 0.4);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around; 
+    list-style: none; 
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #e60000;
+}
+
+
+/* codice per diario */
+.diario-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    gap: 20px;
+}
+
+/* Struttura del libro aperto */
+.libro {
+    display: flex;
+    width: 100%;
+    height: 550px; /* Alzato leggermente per accomodare bene testo + foto */
+    background-color: #f4edd2; /* Colore carta ingiallita/vintage */
+    background-image: radial-gradient(circle at 50% 50%, transparent 60%, rgba(0,0,0,0.05) 100%);
+    border-radius: 8px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(0,0,0,0.1);
+    position: relative;
+    border: 1px solid #dcd1b4;
+    overflow: hidden;
+}
+
+/* La piegatura centrale del diario */
+.linea-centrale {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.15), rgba(0,0,0,0.3), rgba(0,0,0,0.15));
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Stile comune delle due pagine */
+.pagina {
+    flex: 1;
+    padding: 40px 50px;
+    color: #2b261d;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-y: auto;
+}
+
+/* Titoli delle regole nel diario */
+.pagina h2 {
+    color: #8b0000;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed rgba(139, 0, 0, 0.3);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.pagina p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Le immagini dentro il diario */
+.pagina img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 15px;
+    filter: sepia(0.4) contrast(1.1); /* Effetto foto Polaroid d'epoca */
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Bottoni delle frecce esterne */
+.freccia-diario {
+    background: rgba(20, 20, 20, 0.6);
+    color: #e60000;
+    border: 1px solid rgba(230, 0, 0, 0.4);
+    font-size: 24px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.freccia-diario:hover {
+    background: #e60000;
+    color: white;
+    box-shadow: 0 0 15px red;
+}
+
+/* Animazione di cambio pagina fluida */
+.fade-pagina {
+    animation: sfoglia 0.4s ease-in-out;
+}
+
+@keyframes sfoglia {
+    0% { opacity: 0; transform: translateY(2px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* ==========================================
+   SEZIONE ANGEL BATISTA & LA PASION
+   ========================================== */
+
+.sezione-batista {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(15, 15, 15, 0.85); /* Sfondo scuro trasparente in linea col sito */
+    border: 2px solid rgba(230, 0, 0, 0.5);   /* Bordo rosso neon */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9), 0 0 10px rgba(230, 0, 0, 0.3);
+}
+
+.header-batista {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed rgba(230, 0, 0, 0.4);
+    padding-bottom: 15px;
+}
+
+/* TITOLO LA PASION */
+p.titolo-pasion {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #e60000;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow: 0 0 12px rgba(230, 0, 0, 0.8);
+    text-transform: uppercase;
+}
+
+.sub-batista {
+    font-size: 1.1rem;
+    color: #ccc;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* LAYOUT A FLANKING (MEDIA + TESTO) */
+.contenuto-batista {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.box-meme-batista {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+/* IMMAGINE ANGEL BATISTA */
+.foto-batista-container {
+    margin-bottom: 15px;
+}
+.foto-creator {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    height:auto;
+    border-radius:6px;
+    box-shadow: 0 0 10px rgba(230, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+.foto-creator:hover {
+    transform: scale(1.02);
+    border: 2px solid #e60000;
+}
+.foto-batista {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    height:auto;
+    border-radius:6px;
+    box-shadow: 0 0 10px rgba(230, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+.foto-batista:hover {
+    transform: scale(1.02);
+    border: 2px solid #e60000;
+}
+
+.video-container {
+    width: 100%;
+    /* Rimuovi padding-bottom e height: 0 */
+    padding: 20px 10px;
+    border: 2px solid rgba(230, 0, 0, 0.6);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.video-container:hover .youtube-btn {
+    color: #fff;
+    text-shadow: 0 0 10px #ffffff;
+}
+.video-container:hover {
+    border-color: #ff0000;
+    background-color: rgba(230, 0, 0, 0.25); /* Sfondo rosso traslucido */
+    box-shadow: 0 0 25px #ff0000, inset 0 0 15px rgba(255, 0, 0, 0.4); /* Glow esterno e interno */
+    transform: scale(1.02); /* Leggero ingrandimento */
+}
+
+/* Stile per il bottone all'interno */
+.youtube-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%; /* Si adatta alla larghezza del contenitore */
+    padding: 12px 15px;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border:none;
+    box-shadow: none;
+    font-family: 'Bebas Neue', 'Arial', sans-serif;
+}
+
+
+.didascalia-meme {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #e60000;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* TESTO E CITAZIONE */
+.testo-pasion {
+    flex: 1.5;
+    min-width: 280px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.testo-pasion p {
+    margin-bottom: 15px;
+}
+
+.citazione-batista {
+    background: rgba(230, 0, 0, 0.1);
+    border-left: 4px solid #e60000;
+    margin: 20px 0;
+    padding: 12px 15px;
+    font-style: italic;
+    color: #fff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.lista-pasion {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.lista-pasion li {
+    margin-bottom: 10px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+/* ==========================================
+   ANIMAZIONE INGRESSO DAL BASSO (STAGIONI)
+   ========================================== */
+
+#griglia-immagini a {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: entraDalBasso 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Ritardo progressivo per ogni immagine (una ad una) */
+#griglia-immagini a:nth-child(1) { animation-delay: 0.1s; }
+#griglia-immagini a:nth-child(2) { animation-delay: 0.2s; }
+#griglia-immagini a:nth-child(3) { animation-delay: 0.3s; }
+#griglia-immagini a:nth-child(4) { animation-delay: 0.4s; }
+#griglia-immagini a:nth-child(5) { animation-delay: 0.5s; }
+#griglia-immagini a:nth-child(6) { animation-delay: 0.6s; }
+#griglia-immagini a:nth-child(7) { animation-delay: 0.7s; }
+#griglia-immagini a:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes entraDalBasso {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.footer-note {
+    max-width: 1000px;       /* Si adatta alla stessa larghezza della tua griglia centrale */
+    margin: 20px auto 40px auto; /* "auto" a destra e a sinistra lo tiene SEMPRE centrato */
+    padding: 0 20px;         /* Un po' di spazio ai lati per i dispositivi mobili */
+    text-align: center;      /* Centra il testo all'interno */
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #888888;          /* Un grigio scuro in stile tema cupo */
+    line-height: 1.4;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* Contenitore per Ko-fi e Amazon nel footer */
+.supporto-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Stile del pulsante Ko-fi */
+.btn-kofi {
+    background-color: #29abe0; /* Colore tipico di Ko-fi o puoi metterlo rosso #e60000 */
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 0 10px rgba(41, 171, 224, 0.4);
+}
+
+.btn-kofi:hover {
+    background-color: #1f8ab5;
+    transform: scale(1.05);
+}
+
+/* Testo del link Amazon */
+.amazon-link {
+    font-size: 0.85rem;
+    color: #ccc;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.amazon-link a {
+    color: #e60000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.amazon-link a:hover {
+    color: #ff1a1a;
+}
+/* ==========================================
+   SEZIONE SHOP & PRODOTTI (Integrazione)
+   ========================================== */
+
+.shop-container {
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    width: 100%;
+}
+
+.shop-sezione-titolo {
+    color: #fff;
+    font-size: 2.2rem;
+    border-bottom: 2px solid #e60000;
+    padding-bottom: 5px;
+    margin: 40px 0 20px 0;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.griglia-prodotti {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+}
+
+.scheda-prodotto {
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 2px solid rgba(230, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.scheda-prodotto:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
+    border-color: #e60000;
+}
+
+.badge-categoria {
+    color: #e60000;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-shadow: 0 0 5px rgba(230, 0, 0, 0.5);
+}
+
+.scheda-prodotto h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.scheda-prodotto p {
+    font-family: 'Arial', sans-serif; /* Per renderlo più leggibile rispetto al Bebas Neue */
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Pulsante Amazon */
+.btn-amazon {
+    display: block;
+    text-align: center;
+    background-color: #e60000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    letter-spacing: 1px;
+    border: 1px solid #ff3333;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-amazon:hover {
+    background-color: #ff1a1a;
+    box-shadow: 0 0 10px rgba(230, 0, 0, 0.9);
+}
+
+/* Stili aggiuntivi per il Footer (Citazione & PayPal) */
+.footer-citazione {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.footer-donazione {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-paypal {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border: 1px solid #e60000;
+    background-color: rgba(230, 0, 0, 0.2);
+    margin-top: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-paypal:hover {
+    background-color: #e60000;
+    color: #fff;
+}
+.link-cookie {
+    color: #e60000;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.link-cookie:hover {
+    color: #ff1a1a;
+    text-shadow: 0 0 5px rgba(230, 0, 0, 0.6);
+}

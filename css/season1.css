@@ -1,0 +1,265 @@
+*{
+    transition: all 0.4s ease;
+}
+.box{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    max-width: 900px;       
+    margin: 40px auto;       /* Centra tutto il blocco nella pagina */
+    gap: 40px;
+}
+.immagine{
+    width:100%;
+    max-width: 350px;
+    height:auto;
+    border-radius:6px
+}
+.immagine:hover{
+    border: 3px solid red;
+    transform: scale(1.02);
+}
+#cap{
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(230, 0, 0, 0.7);
+    border-bottom: 2px solid #e60000;
+}
+#profile {
+    width:100%;
+    background-color: rgba(15, 15, 15, 0.85); /* Nero/Antracite molto scuro e semitrasparente */
+    border: 1px solid rgba(230, 0, 0, 0.3);   /* Bordino rosso sottile e discreto */
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(230, 0, 0, 0.1); /* Ombra esterna + alone rosso interno */
+}
+#profile:hover{
+    transform:scale(1.02);
+    border: 3px solid red;
+}
+#lista-profilo{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#lista-profilo li {
+    font-size: 1.1rem;
+    color: #ccc; /* Grigio chiaro per i testi, stanca meno la vista del bianco puro */
+    line-height: 1.5;
+}
+#lista-profilo li b {
+    color: #e60000; 
+    font-weight: bold;
+    margin-right: 5px;
+}
+#contenitore-testo {
+    max-width: 900px;        /* Stessa larghezza massima del box sopra per simmetria */
+    margin: 40px auto;       /* Centra il blocco nella pagina e dà spazio dal footer */
+    background-color: rgba(10, 10, 10, 0.75); /* Sfondo scuro per aumentare la leggibilità dello sfondo */
+    padding: 30px;
+    border-radius: 6px;
+    border-left: 3px solid #e60000; /* Splendida linea di stile rossa sul lato sinistro */
+}
+#contenitore-testo p {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.7;        /* Spaziatura verticale perfetta tra le righe per non stancare gli occhi */
+    margin-bottom: 20px;     /* Spazio automatico sotto ogni paragrafo */
+    text-align: justify;     /* Allinea il testo uniformemente a destra e sinistra */
+}
+
+.titolo-sezione {
+    color: #e60000;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+}
+
+#contenitore-testo strong {
+    color: #fff;
+    font-weight: bold;
+}
+.citazione {
+    text-align: center !important; /* Centra la citazione */
+    font-size: 1.3rem !important;
+    color: #e60000 !important;
+    font-style: italic;
+    margin-top: 30px;
+    text-shadow: 0 0 8px rgba(230, 0, 0, 0.6);
+}
+.youtube-btn {
+    display: block;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 15px 20px;
+    background-color: #8b0000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transition: 0.3s;
+}
+.youtube-btn:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 25px #ff0000;
+}
+.titolo-video{
+    text-align: center;      /* <--- Questo centra il testo */
+    color: #fff;       
+    margin: 30px auto 10px auto; /* Centra il blocco e riduce lo spazio sotto verso il bottone */
+    font-size: 1.8rem;       /* (Opzionale) Per dargli la giusta importanza */
+    text-transform: uppercase;
+}
+.evidence-box {
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.85);
+    border: 1px solid rgba(230, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+.evidence-box:hover{
+    transform:scale(1.02);
+    border: 3px solid red;
+}
+
+.evidence-title {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(230, 0, 0, 0.7);
+    border-bottom: 2px solid #e60000;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-size: 0.9rem; /* Un po' più piccolo di KILLER PROFILE per gerarchia */
+}
+
+.evidence-grid {
+    display: flex;
+    gap: 15px; /* Spazio tra le due foto dei delitti */
+}
+
+.evidence-item {
+    flex: 1;
+    text-align: center;
+}
+
+.evidence-item img {
+    width: 100%;
+    height: 110px; /* <--- REGOLA QUESTO VALORE per allungare o accorciare il blocco e pareggiare la foto a sinistra! */
+    object-fit: cover; /* Taglia l'immagine perfettamente senza distorcerla */
+    border-radius: 4px;
+    border: 1px solid #333;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.evidence-item img:hover {
+    transform: scale(1.05);
+    border-color: #e60000;
+}
+
+.evidence-item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+#dextah{
+    position: fixed;
+    right: 20px;         /* Distanza dal bordo destro dello schermo */
+    bottom: 0;        /* Rimane vicino all'angolo in basso a destra */
+    height: auto;
+    width: 18%;          /* Si ridimensiona proporzionalmente */
+    max-width: 250px;
+    z-index: -1;
+    pointer-events: none;
+}
+#luna{
+    position: fixed;
+    left: 20px;          /* Distanza dal bordo sinistro dello schermo */
+    top: 5%;            /* Centra verticalmente nello schermo */
+    transform: translateY(-50%);
+    height: auto;
+    width: 18%;          /* Usa le percentuali così si adatta a schermi diversi senza coprire il testo */
+    max-width: 250px;    /* Evita che diventi enorme */
+    z-index: -1;         /* Li mette dietro al testo in caso di schermi piccoli */
+    pointer-events: none;/* Evita che l'immagine blocchi i click sul sito */
+}
+.colonna-destra {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.evidence-box-centro {
+    max-width: 900px;        /* Uguale alla larghezza del testo per simmetria */
+    margin: 20px auto 40px auto; /* Lo centra nella pagina */
+    background-color: rgba(15, 15, 15, 0.85);
+    border: 1px solid rgba(230, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+/* Lo sfondo della Lightbox */
+.lightbox {
+    display: none; /* Nascosto di base */
+    position: fixed;
+    z-index: 9999; /* Sopra a qualsiasi cosa, anche a Dexter e alla Luna */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Nero profondo semitrasparente */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* L'immagine ingrandita */
+.lightbox-content {
+    max-width: 80%;
+    max-height: 80%;
+    border: 2px solid rgba(230, 0, 0, 0.5); /* Bordino rosso in stile Dexter */
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+    animation: zoomIn 0.3s ease; /* Effetto comparsa fluida */
+}
+
+/* Il testo sotto l'immagine ingrandita */
+#lightbox-caption {
+    margin-top: 15px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Il bottone di chiusura (X) */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #e60000; /* Diventa rossa quando ci passi sopra */
+}
+
+/* Animazione di zoom */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

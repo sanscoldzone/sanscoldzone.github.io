@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROFEI | ARCHIVIO VETRINI</title>
+    <link rel="icon" type="image/png" href="../immagini/icon.png">
+    <link rel="stylesheet" href="../css/struttura.css">
+    <link rel="stylesheet" href="../css/trofei.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9515995415757323"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <h1 id="titolo">ARCHIVIO CRIMINALE</h1>
+        <p id="sottotitolo">SELEZIONA UN VETRINO PER ISPEZIONARLO</p>
+    </header>
+
+    <main class="sezione-trofei">
+        <!-- CONTENITORE PRINCIPALE CON L'IMMAGINE DELLA SCATOLA -->
+        <div class="scatola-container">
+            <img src="../immagini/contenitore.jpg" alt="Scatola Vetrini Dexter" class="scatola-bg">
+
+            <!-- AREA LATO DESTRO CON I 8 VETRINI IN COLLONNA -->
+            <div class="area-vetrini-destra">
+                
+                <!-- VETRINO 1: BRIAN MOSER -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino-brian.png" alt="Vetrino Brian Moser" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">1. ICE TRUCK KILLER</span>
+                        <span class="nome">Brian Moser</span>
+                        <span class="data">STAGIONE 1</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 2: JAMES DOAKES -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino2.png" alt="Vetrino James Doakes" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">2. BAY HARBOR BUTCHER</span>
+                        <span class="nome">James Doakes</span>
+                        <span class="data">STAGIONE 2</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 3: MIGUEL PRADO -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino3.png" alt="Vetrino Miguel Prado" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">3. THE SKINNER PARTNER</span>
+                        <span class="nome">Miguel Prado</span>
+                        <span class="data">STAGIONE 3</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 4: ARTHUR MITCHELL -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino-trinity.png" alt="Vetrino Arthur Mitchell" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">4. TRINITY KILLER</span>
+                        <span class="nome">Arthur Mitchell</span>
+                        <span class="data">STAGIONE 4</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 5: JORDAN CHASE -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino-jordan-chase.png" alt="Vetrino Jordan Chase" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">5. AUTO-HELP GURU</span>
+                        <span class="nome">Jordan Chase</span>
+                        <span class="data">STAGIONE 5</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 6: TRAVIS MARSHALL -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino-marshall.png" alt="Vetrino Travis Marshall" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">6. DOOMSDAY KILLER</span>
+                        <span class="nome">Travis Marshall</span>
+                        <span class="data">STAGIONE 6</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 7: ISAAK SIRKO -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino-isaak.png" alt="Vetrino Isaak Sirko" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">7. KOSHKAS BOSS</span>
+                        <span class="nome">Isaak Sirko</span>
+                        <span class="data">STAGIONE 7</span>
+                    </div>
+                </div>
+
+                <!-- VETRINO 8: OLIVER SAXON -->
+                <div class="vetrino-hotspot">
+                    <img src="../immagini/vetrino-oliver.png" alt="Vetrino Oliver Saxon" class="vetrino-png">
+                    <div class="riquadro-dettaglio">
+                        <span class="alias">8. BRAIN SURGEON</span>
+                        <span class="nome">Oliver Saxon</span>
+                        <span class="data">STAGIONE 8</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- STRUTTURA LIGHTBOX -->
+    <div id="lightbox-container" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Vetrino Ingrandito">
+        <div id="lightbox-caption">
+            <span id="lightbox-alias" class="alias"></span>
+            <span id="lightbox-nome"></span>
+        </div>
+    </div>
+
+    <footer>
+        <ul class="menu">
+            <li id="home"><a href="../pagine/home.html">HOME</a></li>
+            <li id="shop"><a href="../pagine/shop.html">SHOP</a></li>
+            <li id="codice"><a href="../pagine/codice.html">CODICE</a></li>
+            <li id="about-us"><a href="../pagine/chi-siamo.html">CHI SIAMO</a></li>
+        </ul>
+    </footer>
+    <!-- SEZIONE SUPPORTO E AFFILIAZIONE -->
+            <div class="supporto-container">
+                <!-- Pulsante paypal -->
+                <a href="https://www.paypal.me/TheBayHarbourSite" target="_blank" class="btn-kofi">
+                    💳 Supporta il sito con PayPal
+                </a>
+
+            </div>
+        <div class="footer-note">
+            <p class="disclaimer">Sito amatoriale non ufficiale creato da fan. Dexter, i relativi personaggi, marchi e contenuti multimediali sono di proprietà di Showtime / Paramount. Nessuna violazione del copyright è intesa.</p>
+            <p class="disclaimer">Per maggiori informazioni consulta la nostra <a href="cookie.html" class="link-cookie">Cookie Policy</a>.</p>
+        </div>
+
+    <!-- SCRIPT PER GESTIRE IL CLICK SUI VETRINI -->
+    <script>
+        const lightbox = document.getElementById('lightbox-container');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxAlias = document.getElementById('lightbox-alias');
+        const lightboxNome = document.getElementById('lightbox-nome');
+        const btnClose = document.querySelector('.lightbox-close');
+
+        // Al click su un vetrino nella scatola
+        document.querySelectorAll('.vetrino-hotspot').forEach(spot => {
+            spot.addEventListener('click', () => {
+                const img = spot.querySelector('.vetrino-png');
+                const alias = spot.querySelector('.alias').innerText;
+                const nome = spot.querySelector('.nome').innerText;
+
+                // Riempie il lightbox con i dati del vetrino cliccato
+                lightboxImg.src = img.src;
+                lightboxAlias.innerText = alias;
+                lightboxNome.innerText = nome;
+
+                // Mostra il lightbox con l'animazione
+                lightbox.classList.add('attivo');
+            });
+        });
+
+        // Chiude cliccando sulla "X"
+        btnClose.addEventListener('click', () => {
+            lightbox.classList.remove('attivo');
+        });
+
+        // Chiude cliccando sullo sfondo nero esterno
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('attivo');
+            }
+        });
+    </script>
+
+</body>
+</html>
