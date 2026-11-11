@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/struttura.css">
+        <link rel="icon" type="image/png" href="immagini/icon.png">
+        <title>The Bay Harbour Site - HOME</title>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9515995415757323"
+     crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <h1 id="titolo">THE BAY <span class="testo-rosso">HARBOUR </span>SITE</h1>
+            <h3 id="sottotitolo">Scoprendo i segreti oscuri di Miami</h3>
+        </header>
+
+        <!-- 🩸 BANNER INTERATTIVO CON L'AUDIO (Messo qui in alto) -->
+        <div style="background-color: #050505; border: 2px solid #e60000; border-radius: 10px; padding: 30px 20px; text-align: center; margin: 20px auto; max-width: 800px; box-shadow: 0 0 20px rgba(230, 0, 0, 0.4);">
+            <h2 style="color: #e60000; font-size: 2.2rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; text-shadow: 0 0 10px rgba(230, 0, 0, 0.8); font-family: 'Courier New', Courier, monospace;">Tonight's the night.</h2>
+            <button id="play-audio-btn" style="background: transparent; color: #fff; border: 2px solid #fff; padding: 10px 20px; font-size: 1rem; cursor: pointer; text-transform: uppercase; transition: all 0.3s ease; font-family: 'Courier New', Courier, monospace;">🔊 Ascolta la voce</button>
+        </div>
+        <audio id="dexter-audio" src="audio/tonight-the-night-voice.mp3"></audio>
+
+        <script>
+            const playBtn = document.getElementById('play-audio-btn');
+            const audioDexter = document.getElementById('dexter-audio');
+
+            playBtn.addEventListener('click', () => {
+                audioDexter.currentTime = 0;
+                audioDexter.play();
+                playBtn.innerText = "🩸 Riproduzione...";
+                setTimeout(() => {
+                    playBtn.innerText = "🔊 Ascolta la voce";
+                }, 3000);
+            });
+        </script>
+        <!-- FINE BANNER -->
+
+        <div id="griglia-immagini">
+                <a href="pagine/season1.html"><img src="immagini/season 1.png" alt="Season 1 - Ice truck killer"></a>
+                <a href="pagine/season2.html"><img src="immagini/season 2.png" alt="Season 2 - The bay harbour butcher"></a>
+                <a href="pagine/season3.html"><img src="immagini/season 3.png" alt="Season 3 - Miguel Prado"></a>
+                <a href="pagine/season4.html"><img src="pagine/season 4.png" alt="Season 4 - Trinity"></a>
+                <a href="pagine/season5.html"><img src="immagini/season 5.png" alt="Season 5 - Jordan Chase"></a>
+                <a href="pagine/season6.html"><img src="immagini/season 6.png" alt="Season 6 - Travis Marshall"></a>
+                <a href="pagine/season7.html"><img src="immagini/season 7.png" alt="Season 7 - Isaak Sirko"></a>
+                <a href="pagine/season8.html"><img src="immagini/season 8.png" alt="Season 8 - Oliver Saxon"></a>
+        </div>
+
+        <footer>
+            <ul class="menu">
+                <li id="shop"><a href="pagine/shop.html">SHOP</a></li>
+                <li id="about-us"><a href="pagine/chi-siamo.html">CHI SIAMO</a></li>
+                <li id="codice"><a href="pagine/codice.html">CODICE</a></li>
+                <li id="trofei"><a href="pagine/trofei.html">TROFEI</a></li>
+            </ul>
+        </footer>
+
+        <!-- SEZIONE SUPPORTO E AFFILIAZIONE -->
+        <div class="supporto-container">
+            <!-- Pulsante paypal -->
+            <a href="https://www.paypal.me/TheBayHarbourSite" target="_blank" class="btn-kofi">
+                💳 Supporta il sito con PayPal
+            </a>
+        </div>
+        <div class="footer-note">
+            <p class="disclaimer">Sito amatoriale non ufficiale creato da fan. Dexter, i relativi personaggi, marchi e contenuti multimediali sono di proprietà di Showtime / Paramount. Nessuna violazione del copyright è intesa.</p>
+            <p class="disclaimer">Per maggiori informazioni consulta la nostra <a href="pagine/cookie.html" class="link-cookie">Cookie Policy</a>.</p>
+        </div>
+
+    </body>
+</html>
